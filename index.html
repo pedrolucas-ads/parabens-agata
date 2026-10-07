@@ -1,0 +1,1396 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover">
+  <title>Para Agata: Uma Noite Estrelada Para os Seus 20 Anos ✨ | Pedro</title>
+  
+  <!-- Metatags para Compartilhamento e Celular -->
+  <meta property="og:title" content="Para Agata: Uma Noite Estrelada Para os Seus 20 Anos ✨">
+  <meta property="og:description" content="Dos 18 aos 20 anos... Algumas luzes nunca se apagam. Uma carta especial de aniversário sob o céu de Van Gogh.">
+  <meta property="og:image" content="./bg-starry-night.jpg">
+  <meta name="theme-color" content="#050a18">
+
+  <!-- Fontes do Google -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@600;700;900&family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,600&family=Great+Vibes&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+  
+  <!-- Ícones Lucide -->
+  <script src="https://unpkg.com/lucide@latest"></script>
+
+  <style>
+    /* =====================================================================
+       ESTILOS EMBUTIDOS - CARTA VAN GOGH: AGATA 20 ANOS
+       ===================================================================== */
+    :root {
+      --bg-deep-night: #050a18;
+      --bg-cobalt-dark: #0a1738;
+      --gold-glow: #ffdf59;
+      --gold-primary: #e5a922;
+      --gold-dark: #b87a0f;
+      --gold-foil: linear-gradient(135deg, #fce99f 0%, #e5a922 45%, #9e6d08 100%);
+      --gold-border: rgba(229, 169, 34, 0.45);
+      --blue-sapphire: #1a56db;
+      --blue-cobalt: #1e40af;
+      --blue-starry: #2563eb;
+      --parchment-bg: #fffdf8;
+      --text-parchment-ink: #111a2e;
+      --shadow-celestial: 0 15px 35px rgba(0, 0, 0, 0.5), 0 0 25px rgba(229, 169, 34, 0.25);
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      -webkit-tap-highlight-color: transparent;
+    }
+
+    html, body {
+      width: 100%;
+      min-height: 100%;
+      overflow-x: hidden;
+      font-family: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+      background-color: var(--bg-deep-night);
+      color: #fff;
+      user-select: none;
+    }
+
+    /* BACKGROUND VAN GOGH & EFEITOS CÓSMICOS */
+    .starry-background {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100vw;
+      height: 100vh;
+      z-index: 0;
+      overflow: hidden;
+    }
+
+    .art-layer {
+      position: absolute;
+      top: -6%;
+      left: -6%;
+      width: 112%;
+      height: 112%;
+      background-image: url('./bg-starry-night.jpg');
+      background-size: cover;
+      background-position: center 25%;
+      background-repeat: no-repeat;
+      filter: brightness(0.82) contrast(1.12) saturate(1.1);
+      animation: breathingArt 26s ease-in-out infinite alternate;
+    }
+
+    @keyframes breathingArt {
+      0% { transform: scale(1) translate(0, 0); }
+      50% { transform: scale(1.04) translate(-1%, -1%); }
+      100% { transform: scale(1.02) translate(1%, 0.5%); }
+    }
+
+    .swirl-overlay {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: radial-gradient(circle at 75% 20%, rgba(255, 223, 89, 0.15), transparent 45%),
+                  radial-gradient(circle at 25% 65%, rgba(30, 64, 175, 0.25), transparent 55%);
+      pointer-events: none;
+      mix-blend-mode: screen;
+    }
+
+    .vignette-overlay {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: radial-gradient(circle at center, rgba(5, 10, 24, 0.25) 0%, rgba(5, 10, 24, 0.78) 75%, rgba(2, 5, 14, 0.96) 100%);
+      pointer-events: none;
+    }
+
+    #starsCanvas {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      pointer-events: auto;
+    }
+
+    /* BALÕES AZUIS 3D & CONFETES */
+    .confetti-canvas {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100vw;
+      height: 100vh;
+      z-index: 99;
+      pointer-events: none;
+    }
+
+    .balloons-container {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100vw;
+      height: 100vh;
+      z-index: 50;
+      pointer-events: none;
+      overflow: hidden;
+    }
+
+    .balloon {
+      position: absolute;
+      bottom: -160px;
+      width: 60px;
+      height: 76px;
+      border-radius: 50% 50% 50% 50% / 40% 40% 60% 60%;
+      opacity: 0.96;
+      box-shadow: inset -6px -10px 18px rgba(0, 0, 0, 0.45), 0 12px 28px rgba(10, 25, 60, 0.55);
+      animation: floatUpward linear forwards;
+    }
+
+    .balloon::before {
+      content: '';
+      position: absolute;
+      top: 15%;
+      left: 20%;
+      width: 15px;
+      height: 24px;
+      border-radius: 50%;
+      background: rgba(255, 255, 255, 0.65);
+      transform: rotate(-32deg);
+      filter: blur(1.2px);
+    }
+
+    .balloon-knot {
+      position: absolute;
+      bottom: -6px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 11px;
+      height: 7px;
+      border-radius: 3px;
+      background: inherit;
+    }
+
+    .balloon-string {
+      position: absolute;
+      top: 100%;
+      left: 50%;
+      width: 2px;
+      height: 90px;
+      background: rgba(255, 255, 255, 0.45);
+      transform-origin: top center;
+      animation: stringWave 2.2s ease-in-out infinite alternate;
+    }
+
+    @keyframes floatUpward {
+      0% { transform: translateY(0) rotate(0deg); opacity: 0; }
+      10% { opacity: 0.95; }
+      90% { opacity: 0.95; }
+      100% { transform: translateY(calc(-100vh - 250px)) rotate(12deg); opacity: 0; }
+    }
+
+    @keyframes stringWave {
+      0% { transform: rotate(-6deg); }
+      100% { transform: rotate(6deg); }
+    }
+
+    .balloon.blue-cobalt { background: radial-gradient(circle at 35% 30%, #3b82f6, #1d4ed8 60%, #172554 100%); }
+    .balloon.blue-sapphire { background: radial-gradient(circle at 35% 30%, #60a5fa, #2563eb 60%, #1e3a8a 100%); }
+    .balloon.blue-celestial { background: radial-gradient(circle at 35% 30%, #93c5fd, #38bdf8 55%, #0c4a6e 100%); }
+    .balloon.blue-indigo { background: radial-gradient(circle at 35% 30%, #818cf8, #4338ca 60%, #312e81 100%); }
+    .balloon.blue-goldshine { background: radial-gradient(circle at 35% 30%, #38bdf8, #0284c7 65%, #082f49 100%); border: 1px solid rgba(255, 223, 89, 0.5); }
+
+    .petal-sunflower {
+      position: absolute;
+      top: -40px;
+      width: 14px;
+      height: 22px;
+      border-radius: 50% 0 50% 50%;
+      background: radial-gradient(circle at 40% 40%, #ffdf59, #e5a922 80%);
+      opacity: 0.85;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+      animation: petalFall linear forwards;
+    }
+
+    @keyframes petalFall {
+      0% { transform: translateY(0) rotate(0deg) scale(0.8); opacity: 0; }
+      15% { opacity: 0.9; }
+      90% { opacity: 0.9; }
+      100% { transform: translateY(calc(100vh + 80px)) rotate(360deg) scale(1); opacity: 0; }
+    }
+
+    /* HEADER & NAVEGAÇÃO */
+    .top-nav {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      padding: 14px 18px;
+      padding-top: calc(14px + env(safe-area-inset-top, 0px));
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      z-index: 100;
+    }
+
+    .badge-tag {
+      display: inline-flex;
+      align-items: center;
+      gap: 7px;
+      padding: 6px 12px;
+      background: rgba(6, 13, 31, 0.75);
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+      border: 1px solid rgba(229, 169, 34, 0.4);
+      border-radius: 999px;
+      font-size: 11px;
+      font-weight: 600;
+      letter-spacing: 0.4px;
+      color: var(--gold-glow);
+      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.35);
+    }
+
+    .nav-actions {
+      display: flex;
+      align-items: center;
+      gap: 9px;
+    }
+
+    .music-pill-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 7px;
+      padding: 7px 14px;
+      border-radius: 999px;
+      background: rgba(10, 23, 56, 0.85);
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+      border: 1.2px solid rgba(229, 169, 34, 0.5);
+      color: #fff;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      box-shadow: 0 4px 14px rgba(0, 0, 0, 0.4);
+    }
+
+    .music-pill-btn:hover, .music-pill-btn:active {
+      transform: scale(1.05);
+      border-color: var(--gold-glow);
+      box-shadow: 0 0 18px rgba(229, 169, 34, 0.5);
+    }
+
+    .music-pill-btn svg { width: 16px; height: 16px; stroke: var(--gold-glow); }
+    .music-label { font-size: 11px; font-weight: 600; color: #fff; }
+
+    .music-wave {
+      display: flex;
+      align-items: center;
+      gap: 2.5px;
+      height: 12px;
+    }
+
+    .music-wave span {
+      width: 2px;
+      height: 100%;
+      background: var(--gold-glow);
+      border-radius: 2px;
+      animation: soundBars 1s ease-in-out infinite alternate;
+    }
+    .music-wave span:nth-child(2) { animation-delay: 0.25s; }
+    .music-wave span:nth-child(3) { animation-delay: 0.5s; }
+
+    .music-wave.paused span {
+      animation-play-state: paused;
+      height: 3px;
+    }
+
+    @keyframes soundBars {
+      0% { height: 3px; }
+      100% { height: 12px; }
+    }
+
+    .icon-btn {
+      position: relative;
+      width: 38px;
+      height: 38px;
+      border-radius: 50%;
+      background: rgba(10, 23, 56, 0.85);
+      backdrop-filter: blur(10px);
+      border: 1px solid rgba(229, 169, 34, 0.45);
+      color: #fff;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      transition: all 0.25s ease;
+    }
+
+    .icon-btn:hover, .icon-btn:active { transform: scale(1.1); border-color: var(--gold-glow); }
+    .celebrate-btn .btn-emoji { font-size: 18px; }
+
+    /* CONTAINER PRINCIPAL */
+    .main-wrapper {
+      position: relative;
+      z-index: 10;
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 82px 16px 45px;
+    }
+
+    /* TELA 1: ENVELOPE MÁGICO */
+    .envelope-screen {
+      width: 100%;
+      max-width: 420px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+      animation: fadeIn 0.9s ease-out;
+    }
+
+    .intro-heading { margin-bottom: 26px; }
+
+    .greeting-subtitle {
+      font-size: 12px;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 1.8px;
+      color: var(--gold-glow);
+      margin-bottom: 8px;
+      text-shadow: 0 0 12px rgba(255, 223, 89, 0.45);
+    }
+
+    .greeting-title {
+      font-family: 'Cinzel', serif;
+      font-size: 25px;
+      font-weight: 800;
+      line-height: 1.25;
+      color: #ffffff;
+      margin-bottom: 10px;
+      text-shadow: 0 2px 18px rgba(0, 0, 0, 0.75);
+    }
+
+    .greeting-desc {
+      font-size: 13.5px;
+      line-height: 1.5;
+      color: rgba(255, 255, 255, 0.85);
+      max-width: 330px;
+      margin: 0 auto;
+    }
+
+    .envelope-wrapper {
+      width: 100%;
+      max-width: 340px;
+      cursor: pointer;
+      perspective: 1000px;
+      transition: transform 0.3s ease;
+      outline: none;
+    }
+
+    .envelope-wrapper:hover, .envelope-wrapper:focus-visible { transform: translateY(-5px); }
+
+    .envelope {
+      position: relative;
+      width: 100%;
+      height: 220px;
+      background: linear-gradient(145deg, #0d1b3d 0%, #152c61 100%);
+      border-radius: 16px;
+      box-shadow: 0 25px 50px rgba(0, 0, 0, 0.7), 0 0 30px rgba(229, 169, 34, 0.3);
+      border: 1.5px solid rgba(229, 169, 34, 0.55);
+      overflow: hidden;
+    }
+
+    .envelope-flap {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 0;
+      height: 0;
+      border-left: 170px solid transparent;
+      border-right: 170px solid transparent;
+      border-top: 115px solid #1a3575;
+      transform-origin: top center;
+      transition: transform 0.7s cubic-bezier(0.4, 0, 0.2, 1);
+      z-index: 5;
+      filter: drop-shadow(0 4px 8px rgba(0, 0, 0, 0.35));
+    }
+
+    .envelope-pocket {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(180deg, transparent 40%, rgba(8, 18, 44, 0.9) 100%);
+      z-index: 4;
+    }
+
+    .envelope-letter-preview {
+      position: absolute;
+      bottom: 25px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 82%;
+      height: 120px;
+      background: var(--parchment-bg);
+      border-radius: 8px 8px 0 0;
+      box-shadow: 0 -4px 15px rgba(0, 0, 0, 0.25);
+      z-index: 2;
+      padding: 16px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 8px;
+      transition: transform 0.6s ease;
+    }
+
+    .preview-star-crest {
+      font-family: 'Cinzel', serif;
+      font-size: 10px;
+      font-weight: 900;
+      letter-spacing: 1px;
+      color: #925805;
+      margin-bottom: 2px;
+    }
+
+    .preview-line {
+      height: 3.5px;
+      background: rgba(229, 169, 34, 0.35);
+      border-radius: 2px;
+      width: 88%;
+    }
+    .preview-line.short { width: 55%; }
+
+    /* SELO DE CERA DOURADO 3D (AGATA 20 ANOS) */
+    .wax-seal {
+      position: absolute;
+      top: 80px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 76px;
+      height: 76px;
+      border-radius: 50%;
+      background: radial-gradient(circle at 35% 35%, #fff2a3, #e5a922 65%, #8f5803 100%);
+      box-shadow: 0 10px 25px rgba(0, 0, 0, 0.6), 0 0 25px rgba(255, 223, 89, 0.7);
+      z-index: 10;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      border: 2px solid #fff5c0;
+    }
+
+    .wax-seal:hover {
+      transform: translateX(-50%) scale(1.1);
+      box-shadow: 0 12px 30px rgba(0, 0, 0, 0.7), 0 0 32px rgba(255, 223, 89, 0.9);
+    }
+
+    .seal-inner {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+    }
+
+    .seal-crest { font-size: 16px; line-height: 1; }
+
+    .seal-title {
+      font-family: 'Cinzel', serif;
+      font-size: 10px;
+      font-weight: 900;
+      letter-spacing: 1.2px;
+      color: #3b1e00;
+      margin-top: 1px;
+    }
+
+    .seal-subtitle {
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      font-size: 8px;
+      font-weight: 800;
+      color: #593103;
+      letter-spacing: 0.5px;
+    }
+
+    .seal-glow {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      border-radius: 50%;
+      background: radial-gradient(circle, rgba(255, 223, 89, 0.45), transparent 70%);
+      animation: pulseGlow 2.2s infinite;
+    }
+
+    @keyframes pulseGlow {
+      0% { transform: scale(0.95); opacity: 0.8; }
+      100% { transform: scale(1.35); opacity: 0; }
+    }
+
+    .touch-hint {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      margin-top: 22px;
+      padding: 8px 18px;
+      background: rgba(8, 18, 44, 0.8);
+      backdrop-filter: blur(10px);
+      border-radius: 999px;
+      border: 1px solid rgba(229, 169, 34, 0.35);
+      font-size: 13px;
+      color: var(--gold-glow);
+      font-weight: 500;
+    }
+
+    .hint-icon { width: 15px; height: 15px; stroke: var(--gold-glow); }
+
+    .envelope-opening .envelope-flap { transform: rotateX(180deg); z-index: 1; }
+    .envelope-opening .wax-seal { transform: translateX(-50%) scale(0); opacity: 0; }
+    .envelope-opening .envelope-letter-preview { transform: translateX(-50%) translateY(-75px); }
+
+    /* TELA 2: A CARTA ABERTA */
+    .letter-screen {
+      width: 100%;
+      max-width: 440px;
+      animation: letterSlideIn 0.85s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+    }
+
+    @keyframes letterSlideIn {
+      from { opacity: 0; transform: translateY(45px) scale(0.96); }
+      to { opacity: 1; transform: translateY(0) scale(1); }
+    }
+
+    .letter-parchment {
+      position: relative;
+      background-color: var(--parchment-bg);
+      background-image: 
+        radial-gradient(ellipse at top, rgba(255, 248, 225, 0.9), transparent 75%),
+        repeating-linear-gradient(45deg, rgba(229, 169, 34, 0.02) 0px, rgba(229, 169, 34, 0.02) 2px, transparent 2px, transparent 6px);
+      color: var(--text-parchment-ink);
+      border-radius: 22px;
+      padding: 36px 24px 30px;
+      box-shadow: 0 30px 60px rgba(0, 0, 0, 0.75), 0 0 45px rgba(229, 169, 34, 0.28);
+      border: 2px solid var(--gold-border);
+      overflow: hidden;
+    }
+
+    .letter-corner {
+      position: absolute;
+      width: 30px;
+      height: 30px;
+      border-color: var(--gold-primary);
+      border-style: solid;
+      opacity: 0.85;
+    }
+    .letter-corner.top-left { top: 12px; left: 12px; border-width: 2.5px 0 0 2.5px; }
+    .letter-corner.top-right { top: 12px; right: 12px; border-width: 2.5px 2.5px 0 0; }
+    .letter-corner.bottom-left { bottom: 12px; left: 12px; border-width: 0 0 2.5px 2.5px; }
+    .letter-corner.bottom-right { bottom: 12px; right: 12px; border-width: 0 2.5px 2.5px 0; }
+
+    .letter-header { text-align: center; margin-bottom: 22px; }
+
+    .constellation-symbol {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      color: var(--gold-dark);
+      font-size: 14px;
+      margin-bottom: 4px;
+    }
+    .moon-symbol { font-size: 22px; }
+
+    .letter-pretitle {
+      font-family: 'Cinzel', serif;
+      font-size: 12px;
+      font-weight: 700;
+      letter-spacing: 2px;
+      color: #824f05;
+      text-transform: uppercase;
+    }
+
+    .letter-main-title {
+      font-family: 'Cinzel', serif;
+      font-size: 28px;
+      font-weight: 900;
+      color: #0e1e44;
+      letter-spacing: 0.5px;
+      margin: 4px 0;
+      text-shadow: 0 1px 2px rgba(229, 169, 34, 0.35);
+    }
+
+    .gold-separator {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 12px;
+      margin: 10px 0;
+    }
+    .sep-line {
+      flex: 1;
+      max-width: 65px;
+      height: 1px;
+      background: linear-gradient(90deg, transparent, var(--gold-primary), transparent);
+    }
+    .sep-gem { color: var(--gold-dark); font-size: 12px; }
+
+    .letter-subtitle {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 16px;
+      font-style: italic;
+      color: #4b5563;
+      line-height: 1.4;
+      max-width: 320px;
+      margin: 0 auto;
+    }
+
+    .letter-body {
+      font-family: 'Cormorant Garamond', Georgia, serif;
+      font-size: 18.5px;
+      line-height: 1.68;
+      color: #1e293b;
+      text-align: justify;
+    }
+
+    .paragraph { margin-bottom: 15px; }
+
+    .drop-cap::first-letter {
+      font-family: 'Cinzel', serif;
+      float: left;
+      font-size: 46px;
+      line-height: 0.85;
+      font-weight: 900;
+      color: #1a3575;
+      padding-right: 9px;
+      padding-top: 4px;
+    }
+
+    .art-quote-card {
+      margin: 22px 0;
+      padding: 16px 18px;
+      background: linear-gradient(135deg, rgba(30, 58, 138, 0.08) 0%, rgba(229, 169, 34, 0.12) 100%);
+      border-left: 3.5px solid var(--gold-primary);
+      border-radius: 0 14px 14px 0;
+      position: relative;
+    }
+
+    .quote-stars {
+      font-size: 10px;
+      color: var(--gold-dark);
+      letter-spacing: 4px;
+      margin-bottom: 6px;
+    }
+
+    .letter-quote {
+      font-style: italic;
+      font-size: 17.5px;
+      line-height: 1.55;
+      color: #0f1f3d;
+    }
+
+    .letter-quote cite {
+      display: block;
+      font-size: 13.5px;
+      font-style: normal;
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      color: #64748b;
+      margin-top: 7px;
+      font-weight: 600;
+    }
+
+    .closing-highlight-box {
+      margin-top: 18px;
+      padding: 14px 16px;
+      background: rgba(37, 99, 235, 0.06);
+      border-radius: 12px;
+      border-left: 3px solid #2563eb;
+      border-right: 1px solid rgba(37, 99, 235, 0.15);
+    }
+
+    .paragraph-closing {
+      font-family: 'Cormorant Garamond', Georgia, serif;
+      font-size: 18px;
+      line-height: 1.6;
+      color: #0f172a;
+      font-weight: 600;
+    }
+
+    .letter-footer {
+      margin-top: 26px;
+      padding-top: 18px;
+      border-top: 1px dashed rgba(229, 169, 34, 0.45);
+      text-align: right;
+    }
+
+    .signature-intro {
+      font-family: 'Cormorant Garamond', serif;
+      font-style: italic;
+      font-size: 16.5px;
+      color: #64748b;
+    }
+
+    .signature-handwritten {
+      font-family: 'Great Vibes', cursive;
+      font-size: 38px;
+      color: #11224d;
+      line-height: 1.2;
+      margin-top: 2px;
+    }
+
+    .signature-hearts {
+      font-family: 'Cinzel', serif;
+      font-size: 17px;
+      font-weight: 700;
+      color: #be123c;
+      margin-top: 2px;
+      letter-spacing: 1px;
+    }
+
+    .letter-date {
+      font-size: 12px;
+      color: #94a3b8;
+      margin-top: 6px;
+    }
+
+    .letter-actions {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+      margin-top: 28px;
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 9px;
+      width: 100%;
+      padding: 14px 18px;
+      border-radius: 12px;
+      font-size: 15px;
+      font-weight: 600;
+      letter-spacing: 0.3px;
+      cursor: pointer;
+      transition: all 0.25s ease;
+      border: none;
+      text-decoration: none;
+    }
+
+    .btn svg { width: 18px; height: 18px; }
+
+    .btn-gold {
+      background: var(--gold-foil);
+      color: #2b1800;
+      box-shadow: 0 4px 18px rgba(229, 169, 34, 0.45);
+    }
+    .btn-gold:hover, .btn-gold:active {
+      transform: translateY(-2px);
+      box-shadow: 0 6px 24px rgba(229, 169, 34, 0.6);
+    }
+
+    .letter-bottom-tag {
+      text-align: center;
+      margin-top: 20px;
+      font-size: 11px;
+      color: #94a3b8;
+      letter-spacing: 0.5px;
+    }
+
+    .hidden { display: none !important; }
+
+    @keyframes fadeIn {
+      from { opacity: 0; }
+      to { opacity: 1; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Plano de Fundo com a Noite Estrelada de Van Gogh -->
+  <div class="starry-background">
+    <div class="art-layer"></div>
+    <div class="swirl-overlay"></div>
+    <div class="vignette-overlay"></div>
+    <!-- Canvas para estrelas cintilantes e rastro de toque artístico -->
+    <canvas id="starsCanvas"></canvas>
+  </div>
+
+  <!-- Camada de Balões Azuis, Pétalas e Confetes Cósmicos -->
+  <div id="balloonsContainer" class="balloons-container" aria-hidden="true"></div>
+  <canvas id="confettiCanvas" class="confetti-canvas"></canvas>
+
+  <!-- Barra Superior: Controle de Trilha Sonora e Efeitos -->
+  <header class="top-nav">
+    <div class="badge-tag">
+      <span class="sparkle-icon">✨</span>
+      <span>Van Gogh • 18 aos 20 Anos</span>
+    </div>
+
+    <div class="nav-actions">
+      <!-- Player de Trilha Sonora / Caixa de Música Estelar -->
+      <button id="soundToggle" class="music-pill-btn" title="Ligar/Desligar Canção de Van Gogh" aria-label="Música das Estrelas">
+        <i data-lucide="music" id="soundIcon"></i>
+        <span class="music-label">Canção das Estrelas</span>
+        <span class="music-wave" id="musicWave">
+          <span></span><span></span><span></span>
+        </span>
+      </button>
+
+      <!-- Botão para Chover Balões e Pétalas -->
+      <button id="celebrateBtn" class="icon-btn celebrate-btn" title="Soltar balões azuis e estrelas" aria-label="Comemorar">
+        <span class="btn-emoji">🎈</span>
+      </button>
+    </div>
+  </header>
+
+  <!-- Container Central Mobile-First -->
+  <main class="main-wrapper">
+
+    <!-- TELA 1: O ENVELOPE SELADO EM CERA DOURADA -->
+    <section id="envelopeScreen" class="envelope-screen">
+      <div class="intro-heading">
+        <p class="greeting-subtitle">Dos 18 aos 20 anos... Algumas luzes nunca se apagam ✨</p>
+        <h1 class="greeting-title">Para Agata, Sob o Céu Estrelado</h1>
+        <p class="greeting-desc">Toque no lacre de ouro para abrir a carta que guardei sob as estrelas para o seu aniversário.</p>
+      </div>
+
+      <!-- Envelope 3D com Selo Real Gravado -->
+      <div id="envelopeCard" class="envelope-wrapper" role="button" tabindex="0" aria-label="Toque para abrir a carta de Pedro para Agata">
+        <div class="envelope">
+          <div class="envelope-flap"></div>
+          <div class="envelope-pocket"></div>
+          <div class="envelope-letter-preview">
+            <div class="preview-star-crest">✨ AGATA 20 ANOS ✨</div>
+            <span class="preview-line"></span>
+            <span class="preview-line short"></span>
+          </div>
+          
+          <!-- Selo de Cera Dourado com a Lua e as Estrelas de Van Gogh -->
+          <div class="wax-seal" id="waxSeal">
+            <div class="seal-inner">
+              <span class="seal-crest">🌙</span>
+              <span class="seal-title">AGATA</span>
+              <span class="seal-subtitle">20 ANOS</span>
+            </div>
+            <div class="seal-glow"></div>
+          </div>
+        </div>
+
+        <div class="touch-hint">
+          <i data-lucide="sparkles" class="hint-icon"></i>
+          <span>Toque no selo para abrir sua carta</span>
+          <i data-lucide="sparkles" class="hint-icon"></i>
+        </div>
+      </div>
+    </section>
+
+    <!-- TELA 2: A CARTA ABERTA (Pergaminho de Pintura em Tela) -->
+    <section id="letterScreen" class="letter-screen hidden">
+      <article class="letter-parchment">
+        
+        <!-- Moldura Clássica e Cantoneiras Folheadas a Ouro -->
+        <div class="letter-corner top-left"></div>
+        <div class="letter-corner top-right"></div>
+        <div class="letter-corner bottom-left"></div>
+        <div class="letter-corner bottom-right"></div>
+
+        <!-- Cabeçalho da Carta -->
+        <header class="letter-header">
+          <div class="constellation-symbol">
+            <span class="star-mini">★</span>
+            <span class="moon-symbol">🌙</span>
+            <span class="star-mini">★</span>
+          </div>
+          <p class="letter-pretitle">20 aninhos agora 👏</p>
+          <h2 class="letter-main-title">Parabéns, Agata!</h2>
+          <div class="gold-separator">
+            <span class="sep-line"></span>
+            <span class="sep-gem">✦</span>
+            <span class="sep-line"></span>
+          </div>
+          <p class="letter-subtitle">"Assim como nas cores de Van Gogh dos seus 18 anos, que a sua luz continue iluminando o universo..."</p>
+        </header>
+
+        <!-- Corpo da Carta de Pedro para Agata -->
+        <div class="letter-body">
+          
+          <p class="paragraph drop-cap">
+            Espero que Deus continue te abençoando sempre, igual Ele sempre fez. Espero que você tenha uma vida de sucesso e que você possa realizar todos os seus sonhos — e eu sei de coração que isso vai acontecer.
+          </p>
+
+          <p class="paragraph">
+            Você é uma pessoa incrível, sabia que me espelho muito em você? Já passou por tantas dificuldades na vida e continua seguindo de cabeça erguida, com uma força que poucas pessoas no mundo têm.
+          </p>
+
+          <p class="paragraph">
+            Agata, você agora está fazendo 20 anos. Eu sei que essa fase que você está passando não está tão fácil, mas uma coisa eu te prometo: é uma fase, tudo vai se resolver. Daqui a uns anos você vai estar rindo desse momento que a gente chama de “ruim”, porque é uma fase de aprendizado e de evolução. Apenas dê tempo ao tempo.
+          </p>
+
+          <!-- Moldura Artística de Citação de Van Gogh -->
+          <div class="art-quote-card">
+            <div class="quote-stars">✦ ✦ ✦</div>
+            <blockquote class="letter-quote">
+              <p>“Não tenho certeza de nada, mas a visão das estrelas sempre me faz sonhar. E não há nada mais verdadeiramente artístico do que amar as pessoas.”</p>
+              <cite>— Vincent van Gogh</cite>
+            </blockquote>
+          </div>
+
+          <p class="paragraph">
+            Agora falando sobre a gente, kakakak... não é mais só um texto de parabéns, virou uma carta kakaka! Eu sei que a gente fez bastantes planos juntos e tudo tomou rotas diferentes, mas saiba que eu agradeço muito por todo esse tempo que passamos juntos e por tudo o que a gente viveu juntos.
+          </p>
+
+          <p class="paragraph">
+            Obrigado por sempre estar do meu lado, eu sei que você deu o seu máximo. Desculpa por não ter sido uma pessoa exatamente como você queria que eu fosse, isso aconteceu de dando muitas frustrações e trabalho... Mas enfim, não vou falar muito sobre a gente porque seria muita coisa kakaka.
+          </p>
+
+          <p class="paragraph">
+            Vamos apenas aproveitar e evoluir nesse período de aprendizado que estamos vivendo, e saiba que você pode contar comigo para tudo, sempre vou estar aqui! Quero que nossa amizade nunca acabe e vamos entregar o nosso relacionamento nas mãos de Deus, e vamos esperar o tempo decidir, Deus decidir.
+          </p>
+
+          <div class="closing-highlight-box">
+            <p class="paragraph-closing">
+              Agata parabéns novamente, fico muito feliz por mais um ano de vida que passou e por você estar bem, por ter saúde e estar conseguindo levantar e ir para a luta todos os dias, isso que é o mais importante. Enfim, parabéns novamente, espero que esse próximo ano de vida seja incrível! 🙌
+            </p>
+          </div>
+
+        </div>
+
+        <!-- Assinatura Romântica e Honesta -->
+        <footer class="letter-footer">
+          <p class="signature-intro">Com todo o meu amor e carinho,</p>
+          <div class="signature-handwritten">Pedro</div>
+          <p class="signature-hearts">Eu te amo ❤️❤️❤️</p>
+          <div class="letter-date" id="letterDate"></div>
+        </footer>
+
+        <!-- Ações Interativas (Apenas Comemorar com Balões e Estrelas) -->
+        <div class="letter-actions">
+          <button id="reCelebrateBtn" class="btn btn-gold">
+            <i data-lucide="party-popper"></i>
+            <span>Celebrar com Balões & Estrelas 🎈✨</span>
+          </button>
+        </div>
+
+        <!-- Rodapé Artístico -->
+        <div class="letter-bottom-tag">
+          <span>Inspirado na Noite Estrelada de Van Gogh • Com amor, Pedro</span>
+        </div>
+
+      </article>
+    </section>
+
+  </main>
+
+  <script>
+    /* =====================================================================
+       SCRIPT EMBUTIDO - INTERATIVIDADE, BALÕES AZUIS & ÁUDIO CELESTIAL
+       ===================================================================== */
+    document.addEventListener('DOMContentLoaded', () => {
+      if (window.lucide) {
+        window.lucide.createIcons();
+      }
+
+      const envelopeCard = document.getElementById('envelopeCard');
+      const envelopeScreen = document.getElementById('envelopeScreen');
+      const letterScreen = document.getElementById('letterScreen');
+      const celebrateBtn = document.getElementById('celebrateBtn');
+      const reCelebrateBtn = document.getElementById('reCelebrateBtn');
+      const soundToggle = document.getElementById('soundToggle');
+      const musicWave = document.getElementById('musicWave');
+      const balloonsContainer = document.getElementById('balloonsContainer');
+      const confettiCanvas = document.getElementById('confettiCanvas');
+      const starsCanvas = document.getElementById('starsCanvas');
+      const letterDate = document.getElementById('letterDate');
+
+      // Data atual formatada
+      const hoje = new Date();
+      const dataFormatada = hoje.toLocaleDateString('pt-BR', { day: '2-digit', month: 'long', year: 'numeric' });
+      if (letterDate) {
+        letterDate.textContent = `Sob o céu estrelado, ${dataFormatada}`;
+      }
+
+      // 1. REVOADA DE BALÕES AZUIS & PÉTALAS
+      const blueVariations = ['blue-cobalt', 'blue-sapphire', 'blue-celestial', 'blue-indigo', 'blue-goldshine'];
+
+      function launchBlueBalloons(count = 14) {
+        for (let i = 0; i < count; i++) {
+          setTimeout(() => {
+            createSingleBalloon();
+          }, i * 220);
+        }
+        launchSunflowerPetals(8);
+      }
+
+      function createSingleBalloon() {
+        const balloon = document.createElement('div');
+        const randomType = blueVariations[Math.floor(Math.random() * blueVariations.length)];
+        balloon.className = `balloon ${randomType}`;
+
+        const leftPos = Math.random() * 84 + 8;
+        balloon.style.left = `${leftPos}vw`;
+
+        const scale = Math.random() * 0.45 + 0.8;
+        balloon.style.transform = `scale(${scale})`;
+
+        const duration = Math.random() * 3.5 + 5.5;
+        balloon.style.animationDuration = `${duration}s`;
+
+        const delay = Math.random() * 0.3;
+        balloon.style.animationDelay = `${delay}s`;
+
+        const knot = document.createElement('div');
+        knot.className = 'balloon-knot';
+        balloon.appendChild(knot);
+
+        const string = document.createElement('div');
+        string.className = 'balloon-string';
+        balloon.appendChild(string);
+
+        balloonsContainer.appendChild(balloon);
+
+        setTimeout(() => {
+          balloon.remove();
+        }, (duration + delay) * 1000 + 400);
+      }
+
+      function launchSunflowerPetals(count = 8) {
+        for (let i = 0; i < count; i++) {
+          setTimeout(() => {
+            const petal = document.createElement('div');
+            petal.className = 'petal-sunflower';
+            petal.style.left = `${Math.random() * 90 + 5}vw`;
+            const duration = Math.random() * 3 + 5;
+            petal.style.animationDuration = `${duration}s`;
+            balloonsContainer.appendChild(petal);
+
+            setTimeout(() => {
+              petal.remove();
+            }, duration * 1000 + 300);
+          }, i * 350);
+        }
+      }
+
+      // 2. CONFETES CINTILANTES & ESTRELAS
+      const ctxConfetti = confettiCanvas.getContext('2d');
+      let confettiParticles = [];
+      let isConfettiActive = false;
+
+      function resizeCanvas() {
+        confettiCanvas.width = window.innerWidth;
+        confettiCanvas.height = window.innerHeight;
+        starsCanvas.width = window.innerWidth;
+        starsCanvas.height = window.innerHeight;
+      }
+      window.addEventListener('resize', resizeCanvas);
+      resizeCanvas();
+
+      const confettiColors = [
+        '#ffdf59', '#ffd369', '#e5a922',
+        '#2563eb', '#1d4ed8', '#60a5fa',
+        '#ffffff', '#fef08a'
+      ];
+
+      class ConfettiParticle {
+        constructor() { this.reset(); }
+        reset() {
+          this.x = Math.random() * confettiCanvas.width;
+          this.y = -20 - Math.random() * 40;
+          this.size = Math.random() * 7 + 5;
+          this.speedY = Math.random() * 3.2 + 2.2;
+          this.speedX = (Math.random() - 0.5) * 2;
+          this.color = confettiColors[Math.floor(Math.random() * confettiColors.length)];
+          this.rotation = Math.random() * 360;
+          this.rotationSpeed = (Math.random() - 0.5) * 8;
+          this.isStar = Math.random() > 0.6;
+          this.opacity = 1;
+        }
+        update() {
+          this.y += this.speedY;
+          this.x += Math.sin(this.y * 0.02) * 1.5 + this.speedX;
+          this.rotation += this.rotationSpeed;
+          if (this.y > confettiCanvas.height) {
+            this.opacity = 0;
+          }
+        }
+        draw() {
+          if (this.opacity <= 0) return;
+          ctxConfetti.save();
+          ctxConfetti.translate(this.x, this.y);
+          ctxConfetti.rotate((this.rotation * Math.PI) / 180);
+          ctxConfetti.fillStyle = this.color;
+          ctxConfetti.globalAlpha = this.opacity;
+
+          if (this.isStar) {
+            ctxConfetti.beginPath();
+            for (let i = 0; i < 4; i++) {
+              ctxConfetti.lineTo(Math.cos((i * Math.PI) / 2) * this.size, Math.sin((i * Math.PI) / 2) * this.size);
+              ctxConfetti.lineTo(Math.cos(((i + 0.5) * Math.PI) / 2) * (this.size * 0.35), Math.sin(((i + 0.5) * Math.PI) / 2) * (this.size * 0.35));
+            }
+            ctxConfetti.closePath();
+            ctxConfetti.fill();
+          } else {
+            ctxConfetti.fillRect(-this.size / 2, -this.size / 2, this.size, this.size * 0.65);
+          }
+          ctxConfetti.restore();
+        }
+      }
+
+      function triggerConfettiBurst(amount = 75) {
+        for (let i = 0; i < amount; i++) {
+          confettiParticles.push(new ConfettiParticle());
+        }
+        if (!isConfettiActive) {
+          isConfettiActive = true;
+          requestAnimationFrame(renderConfetti);
+        }
+      }
+
+      function renderConfetti() {
+        ctxConfetti.clearRect(0, 0, confettiCanvas.width, confettiCanvas.height);
+        for (let i = confettiParticles.length - 1; i >= 0; i--) {
+          const p = confettiParticles[i];
+          p.update();
+          p.draw();
+          if (p.opacity <= 0) {
+            confettiParticles.splice(i, 1);
+          }
+        }
+        if (confettiParticles.length > 0) {
+          requestAnimationFrame(renderConfetti);
+        } else {
+          isConfettiActive = false;
+        }
+      }
+
+      // 3. ESTRELAS & PINCELADAS AO TOQUE (TOUCH DUST)
+      const ctxStars = starsCanvas.getContext('2d');
+      const starsArray = [];
+      const starCount = 48;
+      const touchPoints = [];
+
+      for (let i = 0; i < starCount; i++) {
+        starsArray.push({
+          x: Math.random() * window.innerWidth,
+          y: Math.random() * (window.innerHeight * 0.75),
+          radius: Math.random() * 2.2 + 0.7,
+          alpha: Math.random(),
+          alphaSpeed: (Math.random() * 0.02 + 0.008) * (Math.random() > 0.5 ? 1 : -1)
+        });
+      }
+
+      function addStardustTouch(x, y) {
+        for (let i = 0; i < 3; i++) {
+          touchPoints.push({
+            x: x + (Math.random() - 0.5) * 15,
+            y: y + (Math.random() - 0.5) * 15,
+            radius: Math.random() * 3 + 1.5,
+            alpha: 1,
+            color: Math.random() > 0.4 ? '#ffdf59' : '#60a5fa'
+          });
+        }
+      }
+
+      window.addEventListener('touchmove', (e) => {
+        if (e.touches && e.touches[0]) {
+          addStardustTouch(e.touches[0].clientX, e.touches[0].clientY);
+        }
+      }, { passive: true });
+
+      window.addEventListener('mousemove', (e) => {
+        if (Math.random() > 0.6) {
+          addStardustTouch(e.clientX, e.clientY);
+        }
+      });
+
+      function renderStarsAndStardust() {
+        ctxStars.clearRect(0, 0, starsCanvas.width, starsCanvas.height);
+
+        for (let star of starsArray) {
+          star.alpha += star.alphaSpeed;
+          if (star.alpha >= 1 || star.alpha <= 0.2) {
+            star.alphaSpeed = -star.alphaSpeed;
+          }
+          ctxStars.beginPath();
+          ctxStars.arc(star.x, star.y, star.radius, 0, Math.PI * 2);
+          ctxStars.fillStyle = `rgba(255, 238, 160, ${star.alpha})`;
+          ctxStars.shadowColor = '#ffe259';
+          ctxStars.shadowBlur = 8;
+          ctxStars.fill();
+        }
+
+        for (let i = touchPoints.length - 1; i >= 0; i--) {
+          const tp = touchPoints[i];
+          tp.alpha -= 0.025;
+          tp.y -= 0.6;
+          if (tp.alpha <= 0) {
+            touchPoints.splice(i, 1);
+            continue;
+          }
+          ctxStars.beginPath();
+          ctxStars.arc(tp.x, tp.y, tp.radius, 0, Math.PI * 2);
+          ctxStars.fillStyle = tp.color;
+          ctxStars.globalAlpha = tp.alpha;
+          ctxStars.shadowColor = tp.color;
+          ctxStars.shadowBlur = 10;
+          ctxStars.fill();
+          ctxStars.globalAlpha = 1;
+        }
+
+        requestAnimationFrame(renderStarsAndStardust);
+      }
+      renderStarsAndStardust();
+
+      // 4. TRILHA SONORA NOSTÁLGICA (SINTETIZADOR WEB AUDIO API)
+      let audioCtx = null;
+      let isSoundActive = false;
+      let melodyTimer = null;
+
+      function initAudio() {
+        if (!audioCtx) {
+          const AudioContext = window.AudioContext || window.webkitAudioContext;
+          audioCtx = new AudioContext();
+        }
+        if (audioCtx.state === 'suspended') {
+          audioCtx.resume();
+        }
+      }
+
+      function playStarNote(freq, delay = 0, duration = 2.4) {
+        if (!audioCtx || !isSoundActive) return;
+        try {
+          const osc = audioCtx.createOscillator();
+          const gain = audioCtx.createGain();
+
+          osc.type = 'sine';
+          osc.frequency.setValueAtTime(freq, audioCtx.currentTime + delay);
+
+          gain.gain.setValueAtTime(0.0001, audioCtx.currentTime + delay);
+          gain.gain.exponentialRampToValueAtTime(0.18, audioCtx.currentTime + delay + 0.04);
+          gain.gain.exponentialRampToValueAtTime(0.0001, audioCtx.currentTime + delay + duration);
+
+          osc.connect(gain);
+          gain.connect(audioCtx.destination);
+
+          osc.start(audioCtx.currentTime + delay);
+          osc.stop(audioCtx.currentTime + delay + duration);
+        } catch (e) {
+          console.warn("Audio note err:", e);
+        }
+      }
+
+      const starMelodyNotes = [
+        523.25, 659.25, 783.99, 1046.50,
+        880.00, 659.25, 783.99,
+        698.46, 523.25, 659.25,
+        587.33, 493.88, 523.25
+      ];
+
+      let currentNoteIdx = 0;
+
+      function startMelodyLoop() {
+        if (melodyTimer) return;
+        initAudio();
+        isSoundActive = true;
+        updateSoundUI(true);
+
+        melodyTimer = setInterval(() => {
+          if (isSoundActive) {
+            const note = starMelodyNotes[currentNoteIdx % starMelodyNotes.length];
+            playStarNote(note, 0, 2.8);
+            currentNoteIdx++;
+          }
+        }, 750);
+      }
+
+      function stopMelodyLoop() {
+        isSoundActive = false;
+        if (melodyTimer) {
+          clearInterval(melodyTimer);
+          melodyTimer = null;
+        }
+        updateSoundUI(false);
+      }
+
+      function playCelestialChord() {
+        initAudio();
+        const chord = [523.25, 659.25, 783.99, 1046.50, 1318.51];
+        chord.forEach((freq, idx) => {
+          playStarNote(freq, idx * 0.12, 2.5);
+        });
+      }
+
+      function updateSoundUI(active) {
+        if (active) {
+          musicWave.classList.remove('paused');
+          soundToggle.style.borderColor = 'var(--gold-glow)';
+          soundToggle.style.boxShadow = '0 0 16px rgba(229, 169, 34, 0.5)';
+        } else {
+          musicWave.classList.add('paused');
+          soundToggle.style.borderColor = 'rgba(229, 169, 34, 0.4)';
+          soundToggle.style.boxShadow = 'none';
+        }
+      }
+
+      soundToggle.addEventListener('click', () => {
+        if (isSoundActive) {
+          stopMelodyLoop();
+        } else {
+          startMelodyLoop();
+        }
+      });
+
+      // 5. ENTRADA NA PÁGINA: DISPARO DE BALÕES & CONFETES
+      setTimeout(() => {
+        launchBlueBalloons(14);
+        triggerConfettiBurst(65);
+      }, 450);
+
+      // 6. ABERTURA DO ENVELOPE (EXPERIÊNCIA 3D)
+      function openLetter() {
+        initAudio();
+        playCelestialChord();
+        startMelodyLoop();
+
+        launchBlueBalloons(18);
+        triggerConfettiBurst(110);
+
+        envelopeCard.classList.add('envelope-opening');
+
+        setTimeout(() => {
+          envelopeScreen.classList.add('hidden');
+          letterScreen.classList.remove('hidden');
+          window.scrollTo({ top: 0, behavior: 'smooth' });
+
+          setTimeout(() => {
+            triggerConfettiBurst(75);
+          }, 350);
+        }, 750);
+      }
+
+      envelopeCard.addEventListener('click', openLetter);
+      envelopeCard.addEventListener('keydown', (e) => {
+        if (e.key === 'Enter' || e.key === ' ') {
+          e.preventDefault();
+          openLetter();
+        }
+      });
+
+      // Botão de Celebrar Novamente
+      const triggerCelebration = () => {
+        initAudio();
+        playCelestialChord();
+        launchBlueBalloons(15);
+        triggerConfettiBurst(90);
+      };
+
+      celebrateBtn.addEventListener('click', triggerCelebration);
+      reCelebrateBtn.addEventListener('click', triggerCelebration);
+    });
+  </script>
+</body>
+</html>
